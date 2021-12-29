@@ -46,7 +46,7 @@ def invite():
 
                 else:
                     print('Введите координаты')
-                    print('от 1 до 3! ')
+                    print('от 0 до 2! ')
                     continue
             else:
                 print('Введите числа!')
