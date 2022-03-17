@@ -1,0 +1,21 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+<!-- Название у нас будет Post -->
+{% block title %}
+Post
+{% endblock title %}
+
+<!-- В контенте на странице мы выводим новость, идентификатор которой был передан в url -->
+{% block content %}
+<h2>Вы действительно хотите удалить данную новость?</h2>
+    <h2 style="text-align: left; padding-left: 90px;">{{ one_news.title|censor }}</h2>
+    <p style="text-align: left; padding-left: 90px;">Опубликовано: {{ one_news.dateCreation|date:'d M Y' }}</p>
+    <hr>
+    <p style="text-align: justify;">{{ one_news.text|censor }}</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="подтвердить"></form>
+{% endblock content %}

@@ -1,0 +1,44 @@
+<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+<!-- Название у нас будет Post -->
+{% block title %}
+Post
+{% endblock title %}
+
+<!-- В контенте на странице мы выводим все новости -->
+{% block content %}
+    <h1>Новости</h1>
+    <h3 style="text-align: right;">Количество новостей: {{ filter.qs|length }}</h3>
+    <hr>
+
+    <form method="GET">
+
+        {{ filter.form }} <!-- Форму от фильтров за нас сделает django. А вот кнопку, увы придётся делать самому -->
+        <input type="submit" value="Найти">
+    </form>
+       {% if news %}
+       <table style="margin-left: auto; margin-right: auto;">
+
+           <tr>
+               <td><h4>Название</h4></td>
+               <td><h4>Дата публикации</h4></td>
+               <td><h4>Краткое содержание</h4></td>
+           </tr>
+
+           {% for one_news in filter.qs %}
+           <tr>
+               <td><span style="color: #000000;"><a style="color: #000000;" href="{% url 'one_news' one_news.id %}">{{ one_news.title|censor|truncatechars:20 }}</a></span> </td>
+               <td>{{ one_news.dateCreation|date:'d M Y' }} {{ one_news.dateCreation|time:'G:i:s' }} </td>
+               <td>{{ one_news.text|truncatechars:20|censor }}</td>
+           </tr>
+           {% endfor %}
+
+       </table>
+   {% else %}
+       <h2>Новостей нет!</h2>
+   {% endif %}
+
+{% endblock content %}
