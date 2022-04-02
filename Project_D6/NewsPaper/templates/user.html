@@ -1,0 +1,33 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Author
+{% endblock title %}
+
+{% block content %}
+
+    <h1>Пользователь</h1>
+        <table>
+            <tbody>
+                <tr>
+                    <td><h4 style="padding-left: 20px;">Имя пользователя</h4></td>
+                    <td style="padding-left: 40px;">{{ user.username }}</td>
+                </tr>
+                <tr>
+                    <td><h4 style="padding-left: 20px;">Фамилия</h4></td>
+                    <td style="padding-left: 40px;">{{ user.last_name }}</td>
+                </tr>
+                <tr>
+                    <td><h4 style="padding-left: 20px;">Имя</h4></td>
+                    <td style="padding-left: 40px;">{{ user.first_name }}</td>
+                </tr>
+                <tr>
+                    <td><h4 style="padding-left: 20px;">Эл.почта</h4></td>
+                    <td style="padding-left: 40px;">{{ user.email }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+{% endblock content %}
