@@ -38,7 +38,7 @@ def send_mailing_task():
     for category in Category.objects.all():
         news_from_each_category = []
         news =[]
-        week_number_last = datetime.now().isocalendar()[1] - 3
+        week_number_last = datetime.now().isocalendar()[1] - 1
         print(week_number_last)
 
         for one_news in Post.objects.filter(postCategory=category.id,
