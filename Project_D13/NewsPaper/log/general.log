@@ -1,0 +1,13 @@
+2022-05-19 20:39:24,917 INFO autoreload Watching for file changes with StatReloader
+2022-05-19 20:39:39,037 INFO basehttp "GET /news/ HTTP/1.1" 200 15579
+2022-05-19 20:39:41,841 INFO basehttp "GET /news/ HTTP/1.1" 200 15579
+2022-05-19 20:43:50,314 INFO autoreload C:\Users\Administrator\PycharmProjects\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-05-26 20:55:46,538 INFO autoreload Watching for file changes with StatReloader
+2022-05-26 20:58:08,798 INFO autoreload C:\Users\Administrator\PycharmProjects\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-05-26 20:58:09,345 INFO autoreload Watching for file changes with StatReloader
+2022-05-26 20:58:15,763 INFO basehttp "GET /news/ HTTP/1.1" 200 15578
+2022-05-26 20:58:29,213 INFO basehttp "GET /news/15 HTTP/1.1" 200 4277
+2022-05-26 20:58:39,235 INFO basehttp "GET /news/ HTTP/1.1" 200 15578
+2022-05-26 21:00:15,517 INFO autoreload C:\Users\Administrator\PycharmProjects\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-05-26 21:00:16,173 INFO autoreload Watching for file changes with StatReloader
+2022-05-26 21:02:50,502 INFO autoreload C:\Users\Administrator\PycharmProjects\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.

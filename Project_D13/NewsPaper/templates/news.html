@@ -1,0 +1,86 @@
+<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+<!-- Название у нас будет Post -->
+{% block title %}
+Post
+{% endblock title %}
+
+<!-- В контенте на странице мы выводим все новости -->
+{% block content %}
+
+    <h1>Новости</h1>
+
+    <h3 style="text-align: right;">Количество новостей: {{ news|length }}</h3>
+    <span style="color: #ffc720;"><a style="color: #000000;" href="{% url 'category' 1 %}">Интернет</a></span>
+    <span style="color: #ffc720;"><a style="color: #000000;" href="{% url 'category' 2 %}">Спорт</a></span>
+    <span style="color: #ffc720;"><a style="color: #000000;" href="{% url 'category' 3 %}">Экономика</a></span>
+    <span style="color: #ffc720;"><a style="color: #000000;" href="{% url 'category' 4 %}">Культура</a></span>
+
+    <hr>
+
+       {% if news %}
+       <table style="margin-left: auto; margin-right: auto;">
+
+           <tr>
+               <td><h4 style="padding-left: 20px;">Название новости</h4></td>
+               <td><h4 style="padding-left: 20px;">Дата публикации</h4></td>
+               <td><h4 style="padding-left: 20px;">Краткое содержание</h4></td>
+           </tr>
+
+           {% for one_news in news|dictsortreversed:"dateCreation" %}
+           <tr>
+               <td>
+                    <span style="color: #000000;"><a style="color: #000000;" href="{% url 'one_news' one_news.id %}">{{ one_news.title|censor|truncatechars:20 }}</a></span>
+                   <!-- Если есть права для редактирования новости, то отображается кнопка Edit -->
+                   {% if perms.news.change_post %}
+                        <span style="color: #000000;"><a style="color: #000000;" href="{% url 'post_update' one_news.id %}"> Edit </a></span>
+                   {% endif %}
+                   <!-- Если есть права для удаления новости, то отображается кнопка Delete -->
+                   {% if perms.news.delete_post %}
+                        <span style="color: #ff0000;"><a style="color: #ff0000;" href="{% url 'post_delete' one_news.id %}"> Delete </a></span>
+                   {% endif %}
+
+               </td>
+
+               <td>{{ one_news.dateCreation|date:'d M Y' }} {{ one_news.dateCreation|time:'G:i:s' }} </td>
+               <td>{{ one_news.text|truncatechars:100|censor }}</td>
+           </tr>
+           {% endfor %}
+
+       </table>
+   {% else %}
+       <h2>Новостей нет!</h2>
+   {% endif %}
+<br>
+<!-- Если есть права для добавления новости, то отображается кнопка добавить новость -->
+{% if perms.news.add_post %}
+    <a href="{% url 'post_create' %}">Добавить новую новость/статью</a> <br>
+{% endif %}
+
+{% if is_paginated %}
+    <!-- Если доступна предыдущая страница, то даём ссылку на неё и самую первую страницу -->
+    {% if page_obj.has_previous %}
+        <a href="?page=1">First</a>
+        <a href="?page={{ page_obj.previous_page_number }}"><<</a>
+    {% endif %}
+
+    <!-- Показываем только текущую страницу и ближайшие к ней, чтобы список не тянулся и не захламлял страницу -->
+    {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            <a>{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+
+    <!-- Если есть следующая страница, то даём ссылку на неё и на самую последнюю страницу -->
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">>></a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+    {% endif %}
+{% endif %}
+
+{% endblock content %}

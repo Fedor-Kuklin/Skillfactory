@@ -1,0 +1,18 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+SignIn/Sign APP
+{% endblock title %}
+
+{% block content %}
+
+    <hr>  <h1>Добро пожаловать {{ request.user.username }} на NewsPortal</h1> </hr>
+    <button> <a href="sign/logout/">Выйти</a> </button>
+
+    {% if is_not_authors %}
+        <button> <a href="sign/upgrade_add/"> Стать автором!</a> </button>
+    {% else %}
+        <button> <a href="sign/upgrade_del/"> Удалиться из авторов!</a> </button>
+    {% endif %}
+
+{% endblock content %}

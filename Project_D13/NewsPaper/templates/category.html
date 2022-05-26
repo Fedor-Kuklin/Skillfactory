@@ -1,0 +1,56 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+Новости
+{{ category|length }}
+{% endblock title %}
+
+{% block content %}
+    <h1>
+        {{ category_name }}</h1>
+            {% load account %}
+                {% if user.is_authenticated %}
+                    {% if category_name.id not in subscribed %}
+                     <p><button><a href="{% url 'subscribe_category_add' category_name.id %}">Подписаться</a></button></p>
+                    {% else %}
+                     <p><button><a href="{% url 'subscribe_category_del' category_name.id %}">Отписаться</a></button></p>
+                    {% endif %}
+                 {% endif %}
+
+
+ <hr>
+        {% if category %}
+        <table style="margin-left: auto; margin-right: auto;">
+             <tr>
+               <td><h4 style="padding-left: 20px;">Название новости</h4></td>
+               <td><h4 style="padding-left: 20px;">Дата публикации</h4></td>
+               <td><h4 style="padding-left: 20px;">Краткое содержание</h4></td>
+           </tr>
+
+           {% for one_news in category %}
+           <tr>
+               <td>
+                    <span style="color: #000000;"><a style="color: #000000;" href="{% url 'one_news' one_news.id %}">{{ one_news.title|censor|truncatechars:20 }}</a></span>
+                    <!-- Если есть права для редактирования новости, то отображается кнопка Edit -->
+                   {% if perms.news.change_post %}
+                        <span style="color: #000000;"><a style="color: #000000;" href="{% url 'post_update' one_news.id %}"> Edit </a></span>
+                   {% endif %}
+                   <!-- Если есть права для удаления новости, то отображается кнопка Delete -->
+                   {% if perms.news.delete_post %}
+                        <span style="color: #ff0000;"><a style="color: #ff0000;" href="{% url 'post_delete' one_news.id %}"> Delete </a></span>
+                   {% endif %}
+               </td>
+
+               <td>{{ one_news.dateCreation|date:'d M Y' }} {{ one_news.dateCreation|time:'G:i:s' }} </td>
+               <td>{{ one_news.text|truncatechars:100|censor }}</td>
+           </tr>
+           {% endfor %}
+
+        {% endif %}
+
+
+
+
+{% endblock content %}

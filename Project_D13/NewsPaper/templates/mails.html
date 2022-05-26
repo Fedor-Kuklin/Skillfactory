@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <p>Здравствуйте, {{ user }}. Свежие новости за прошедшую неделю в категории {{ category_name }} :</p>
+    <ul>
+    {% for p in data %}
+        <p>Дата публикации новости: {{ p.dateCreation|date:'d M Y' }} {{ p.dateCreation|time:'G:i:s' }}</p>
+       <li><a href="http://127.0.0.1:8000{% url 'one_news' p.pk %}">{{ p.title }}</a></li>
+        {{ p.text|truncatechars:100 }}
+    {% endfor %}
+    </ul>
+    <hr>
+</body>
+</html>

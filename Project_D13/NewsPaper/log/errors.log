@@ -1,0 +1,6 @@
+2022-05-19 22:27:25,408 INFO "GET /news/ HTTP/1.1" 200 15578 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+2022-05-19 22:28:21,432 WARNING Not Found: /news/599 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py None
+2022-05-19 22:28:21,434 WARNING "GET /news/599 HTTP/1.1" 404 3242 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+2022-05-19 22:29:01,439 INFO "GET /news/59 HTTP/1.1" 200 4065 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+2022-05-19 22:32:39,687 WARNING Not Found: /news/5998 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py None
+2022-05-19 22:32:39,691 WARNING "GET /news/5998 HTTP/1.1" 404 3245 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
