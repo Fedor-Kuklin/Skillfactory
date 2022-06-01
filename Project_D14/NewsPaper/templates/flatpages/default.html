@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load i18n %}
+{% load tz %} <!-- не забываем загрузить тег для работы с часовыми поясами -->
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Bare - Start Bootstrap Template</title>
+        <!-- Favicon-->
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+
+    {% load cache %}
+        {% cache 10 nav %}
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+           <div class="container">
+            <a  class="navbar-brand" href="/"><h1>{% translate "News Portal" %}</h1></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse"
+                       data-target="#navbarResponsive"
+                       aria-controls="navbarResponsive" aria-expanded="false"
+                       aria-label="Toggle navigation">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarResponsive">
+                   <ul class="navbar-nav ml-auto">
+                       <li class="nav-item active">
+                       <a class="nav-link" href="/news/">{% translate "Home Page" %}</a>
+                       </li>
+
+                       <li class="nav-item">
+                           <a class="nav-link" href="/news/search/">{% translate "Search" %}</a>
+                       </li>
+
+                       <li class="nav-item">
+                           <a class="nav-link" href="/news/author/">{% translate "Authors" %}</a>
+                       </li>
+
+                       <li class="nav-item">
+                           {% load account %}
+                            {% if user.is_authenticated %}
+                                <p><span style="color: #ffffff;">{% translate "Hi" %} {{ user.username }}!</span></p>
+                                <p><a href="{% url 'account_logout' %}">{% translate "Log out" %}</a></p>
+                            {% else %}
+                                    <p><span style="color: #ffffff;">{% translate "You are not logged in." %}</span></p>
+                                    <p><a href="{% url 'account_login' %}">{% translate "Log In" %}</a></p>
+                            {% endif %}
+                            </li>
+                       <li class="nav-item">
+                               <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                               <input name="next" type="hidden" value="{{ redirect_to }}">
+                                <select name="language">
+                                    {% get_current_language as LANGUAGE_CODE %}
+                                    {% get_available_languages as LANGUAGES %}
+                                    {% get_language_info_list for LANGUAGES as languages %}
+                                    {% for language in languages %}
+                                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                            {{ language.name_local }} ({{ language.code }})
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                <input  type="submit" {% blocktranslate %} value= "Set" {% endblocktranslate %}>
+                            </form>
+                           </li>
+                           <li class="nav-item">
+                                {% get_current_timezone as TIME_ZONE %}
+                                    <form action="{% url 'set_timezone' %}" method="POST">
+                                        {% csrf_token %}
+                                        <label for="timezone">Time zone:</label>
+                                        <select name="timezone">
+                                            {% for tz in timezones %}
+                                            <option value="{{ tz }}"{% if tz == TIME_ZONE %} selected{% endif %}>{{ tz }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <input type="submit" value="Set">
+                                    </form>
+
+                               {{ TIME_ZONE }}
+                               {{ current_time|timezone:TIME_ZONE }} <!-- Отображаем время в выбранном часовом поясе  -->
+                            </li>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+        </nav>
+    {% endcache %}
+
+        <!-- Page content-->
+        <div class="container">
+         <div class="row">
+           <div class="col-lg-12 text-center">
+               {% block content %}
+
+                    {{ flatpage.content }}
+               {% endblock content %}
+           </div>
+         </div>
+        </div>
+    </body>
+</html>

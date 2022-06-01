@@ -1,0 +1,740 @@
+2022-05-19 22:27:25,408 INFO "GET /news/ HTTP/1.1" 200 15578 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+2022-05-19 22:28:21,432 WARNING Not Found: /news/599 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py None
+2022-05-19 22:28:21,434 WARNING "GET /news/599 HTTP/1.1" 404 3242 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+2022-05-19 22:29:01,439 INFO "GET /news/59 HTTP/1.1" 200 4065 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+2022-05-19 22:32:39,687 WARNING Not Found: /news/5998 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py None
+2022-05-19 22:32:39,691 WARNING "GET /news/5998 HTTP/1.1" 404 3245 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+May 30, 2022 - 13:46:50 ERROR Internal Server Error: /news/category/1/ C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError('Unknown argument for \'translate\' tag: \'news\'. The only options available are \'noop\', \'context\' "xxx", and \'as VAR\'.'), <traceback object at 0x0000025B6E741E00>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\engine.py", line 163, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\engine.py", line 145, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    raise self.error(token, e)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 506, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 284, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    raise self.error(token, e)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 506, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 222, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    raise self.error(token, e)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 506, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\defaulttags.py", line 908, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    raise self.error(token, e)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 506, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\templatetags\i18n.py", line 417, in do_translate
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'translate' tag: 'news'. The only options available are 'noop', 'context' "xxx", and 'as VAR'.
+May 30, 2022 - 13:46:50 ERROR "GET /news/category/1/ HTTP/1.1" 500 221991 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+May 30, 2022 - 14:50:40 ERROR Internal Server Error: /news/ C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 8: 'translate', expected 'endblock'. Did you forget to register or load this tag?"), <traceback object at 0x0000027A091C6D00>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 500, in parse
+    compile_func = self.tags[command]
+KeyError: 'translate'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\engine.py", line 163, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\engine.py", line 145, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    raise self.error(token, e)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 506, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 284, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    raise self.error(token, e)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 506, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 222, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 502, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 552, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 8: 'translate', expected 'endblock'. Did you forget to register or load this tag?
+May 30, 2022 - 14:50:40 ERROR "GET /news/ HTTP/1.1" 500 231974 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+May 30, 2022 - 14:59:56 ERROR Internal Server Error: /news/ C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 8: 'blocktranslate', expected 'endblock'. Did you forget to register or load this tag?"), <traceback object at 0x000001EA734C6680>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 500, in parse
+    compile_func = self.tags[command]
+KeyError: 'blocktranslate'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\engine.py", line 163, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\engine.py", line 145, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    raise self.error(token, e)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 506, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 284, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    raise self.error(token, e)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 506, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 222, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 502, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 552, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 8: 'blocktranslate', expected 'endblock'. Did you forget to register or load this tag?
+May 30, 2022 - 14:59:56 ERROR "GET /news/ HTTP/1.1" 500 234304 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+June 01, 2022 - 20:34:01 ERROR Internal Server Error: /news/ C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid filter: 'timezone'"), <traceback object at 0x000001ACBDA37B00>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 130, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 127, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 106, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\engine.py", line 145, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    raise self.error(token, e)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 506, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\templatetags\cache.py", line 78, in do_cache
+    nodelist = parser.parse(('endcache',))
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 479, in parse
+    raise self.error(token, e)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 477, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 593, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 687, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 599, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'timezone'
+June 01, 2022 - 20:34:01 ERROR "GET /news/ HTTP/1.1" 500 237217 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+June 01, 2022 - 20:37:25 ERROR Internal Server Error: /news/ C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 72: 'get_current_timezone', expected 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x000001ACBD85A8C0>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 500, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_current_timezone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 130, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 127, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 106, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\engine.py", line 145, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    raise self.error(token, e)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 506, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\templatetags\cache.py", line 78, in do_cache
+    nodelist = parser.parse(('endcache',))
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 502, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 552, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 72: 'get_current_timezone', expected 'endcache'. Did you forget to register or load this tag?
+June 01, 2022 - 20:37:25 ERROR "GET /news/ HTTP/1.1" 500 234938 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+June 01, 2022 - 20:37:39 ERROR Internal Server Error: / C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 72: 'get_current_timezone', expected 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x000001ACBD975E40>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 500, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_current_timezone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 130, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 127, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 106, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\engine.py", line 145, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    raise self.error(token, e)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 506, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\templatetags\cache.py", line 78, in do_cache
+    nodelist = parser.parse(('endcache',))
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 502, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 552, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 72: 'get_current_timezone', expected 'endcache'. Did you forget to register or load this tag?
+June 01, 2022 - 20:37:39 ERROR "GET / HTTP/1.1" 500 203276 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+June 01, 2022 - 21:11:07 ERROR Internal Server Error: /news/ C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name."), <traceback object at 0x000001B7F6124D40>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 153, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\templatetags\cache.py", line 47, in render
+    value = self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\defaulttags.py", line 445, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\urls\resolvers.py", line 731, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name.
+June 01, 2022 - 21:11:07 ERROR "GET /news/ HTTP/1.1" 500 241560 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+June 01, 2022 - 21:39:04 ERROR Internal Server Error: /news/ C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name."), <traceback object at 0x000002CCB1366880>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 153, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\templatetags\cache.py", line 47, in render
+    value = self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\defaulttags.py", line 445, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\urls\resolvers.py", line 731, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name.
+June 01, 2022 - 21:39:04 ERROR "GET /news/ HTTP/1.1" 500 241572 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+June 01, 2022 - 21:48:41 ERROR Internal Server Error: /news/ C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name."), <traceback object at 0x000002710C9BD640>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 153, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\templatetags\cache.py", line 47, in render
+    value = self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\defaulttags.py", line 445, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\urls\resolvers.py", line 731, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name.
+June 01, 2022 - 21:48:41 ERROR "GET /news/ HTTP/1.1" 500 241572 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+June 01, 2022 - 22:36:03 ERROR Internal Server Error: /news/timezone C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('default.html'), <traceback object at 0x000001151C869940>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\NewsPaper\news\views.py", line 48, in set_timezone
+    return render(request, 'default.html', context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: default.html
+June 01, 2022 - 22:36:03 ERROR "GET /news/timezone HTTP/1.1" 500 103756 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+June 01, 2022 - 22:36:48 ERROR Internal Server Error: /news/timezone C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'ValueError'>, ValueError('Need 2 values to unpack in for loop; got 14. '), <traceback object at 0x0000022AFFC9D040>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\NewsPaper\news\views.py", line 48, in set_timezone
+    return render(request, 'timezone.html', context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 153, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\templatetags\cache.py", line 47, in render
+    value = self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\defaulttags.py", line 206, in render
+    raise ValueError(
+ValueError: Need 2 values to unpack in for loop; got 14. 
+June 01, 2022 - 22:36:48 ERROR "GET /news/timezone HTTP/1.1" 500 275900 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+June 01, 2022 - 22:38:26 ERROR Internal Server Error: /news/timezone C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'ValueError'>, ValueError('Need 2 values to unpack in for loop; got 14. '), <traceback object at 0x0000022A8101A740>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\NewsPaper\news\views.py", line 48, in set_timezone
+    return render(request, 'timezone.html', context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 153, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\templatetags\cache.py", line 47, in render
+    value = self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\defaulttags.py", line 206, in render
+    raise ValueError(
+ValueError: Need 2 values to unpack in for loop; got 14. 
+June 01, 2022 - 22:38:26 ERROR "GET /news/timezone HTTP/1.1" 500 275892 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+June 01, 2022 - 22:38:41 ERROR Internal Server Error: /news/timezone C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'ValueError'>, ValueError('Need 2 values to unpack in for loop; got 14. '), <traceback object at 0x0000025BBD0799C0>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\NewsPaper\news\views.py", line 48, in set_timezone
+    return render(request, 'timezone.html', context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 153, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\templatetags\cache.py", line 47, in render
+    value = self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\defaulttags.py", line 206, in render
+    raise ValueError(
+ValueError: Need 2 values to unpack in for loop; got 14. 
+June 01, 2022 - 22:38:41 ERROR "GET /news/timezone HTTP/1.1" 500 275894 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+June 01, 2022 - 22:48:18 ERROR Internal Server Error: /news/default C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('default.html'), <traceback object at 0x000001E1032C8540>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\NewsPaper\news\views.py", line 48, in set_timezone
+    return render(request, 'default.html', context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: default.html
+June 01, 2022 - 22:48:18 ERROR "GET /news/default HTTP/1.1" 500 103745 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+June 01, 2022 - 22:50:02 ERROR Internal Server Error: /news/default C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('default.html'), <traceback object at 0x000001EFDDC622C0>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\NewsPaper\news\views.py", line 48, in set_timezone
+    return render(request, 'default.html', context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: default.html
+June 01, 2022 - 22:50:02 ERROR "GET /news/default HTTP/1.1" 500 103744 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+June 01, 2022 - 22:57:20 ERROR Internal Server Error: / C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name."), <traceback object at 0x000001F51D647100>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\loader_tags.py", line 153, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\templatetags\cache.py", line 47, in render
+    value = self.nodelist.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\template\defaulttags.py", line 445, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\urls\resolvers.py", line 731, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name.
+June 01, 2022 - 22:57:20 ERROR "GET / HTTP/1.1" 500 175859 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+June 01, 2022 - 22:58:54 ERROR Internal Server Error: /default C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'django.utils.datastructures.MultiValueDictKeyError'>, MultiValueDictKeyError('timezone'), <traceback object at 0x0000014D01193180>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'timezone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\NewsPaper\news\views.py", line 45, in set_timezone
+    request.session['django_timezone'] = request.POST['timezone']
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'timezone'
+June 01, 2022 - 22:58:54 ERROR "POST /default HTTP/1.1" 500 87195 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
+June 01, 2022 - 23:30:51 ERROR Internal Server Error: /news/settimezone/ C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\log.py (<class 'django.utils.datastructures.MultiValueDictKeyError'>, MultiValueDictKeyError('timezone'), <traceback object at 0x000001ADF3969700>)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'timezone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\NewsPaper\news\views.py", line 45, in set_timezone
+    request.session['django_timezone'] = request.POST['timezone']
+  File "C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'timezone'
+June 01, 2022 - 23:30:51 ERROR "POST /news/settimezone/ HTTP/1.1" 500 87309 C:\Users\Administrator\PycharmProjects\NewsPaper\venv\lib\site-packages\django\core\servers\basehttp.py None
