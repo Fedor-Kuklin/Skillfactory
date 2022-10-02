@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Update_Profile | {% endblock %}
+
+{% block content %}
+
+    <div class="header-bar">
+        <h1>Edit Profile</h1>
+
+        <a href="{% url 'rooms' %}">&#8592; Back</a>
+
+    </div>
+
+    <div class="card-body">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+
+            <div class="w-full mt-2 px-4 py-2 rounded-xl"> {{ form.profile_pic }} </div>
+            <input class="button" type="submit" value="Update">
+        </form>
+
+    </div>
+
+{% endblock content %}
