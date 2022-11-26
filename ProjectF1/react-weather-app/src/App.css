@@ -1,0 +1,17 @@
+.container {
+  max-width: 1080px;
+  margin: 20px auto;
+}
+
+.hours-item {
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  height: 40px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  padding: 5px 20px;
+}
