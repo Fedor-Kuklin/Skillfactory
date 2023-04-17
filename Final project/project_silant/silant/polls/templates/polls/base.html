@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    <script type="text/javascript" src="{% static 'polls/js/sorttable.js' %}"></script>
+    <link type="text/css" href="{% static 'polls/css/styles.css' %}" rel="stylesheet" />
+    <link rel="shortcut icon" href="{% static 'polls/images/main.jpg' %}" type="image/x-icon"/>
+    {% block add_style %} {% endblock %}
+</head>
+<body>
+    <div class="header">
+
+        <ul id="mainmenu" class="mainmenu">
+            {% if request.user.is_authenticated %}
+                        <li class="logo"><a href="{% url 'search_car' %}"><div class="logo"></div> </a></li>
+                    {% else %}
+                        <li class="logo"><a href="{% url 'car_all_blank' %}"><div class="logo"></div></a></li>
+                    {% endif %}
+            <li >
+                +7-8352-20-12-09, telegram
+            </li>
+            {% if request.user.is_authenticated %}
+				<li class="last"><a href="{% url 'logout' %}">Выйти из сервиса</a></li>
+
+            {% else %}
+				<li class="last"><a href="{% url 'login' %}">Авторизоваться</a></li>
+            {% endif %}
+        </ul>
+        <p>Электронная сервисная книжка "Мой Силант"</p>
+    </div>
+    {% if request.user.is_authenticated %}
+    {% if perms.polls.view_references %}
+    <a href="{% url 'references' %}"><div class="reference">Справочники</div></a>
+
+    {% endif %}
+    {% if perms.auth.view_user %}
+    <a href="{% url 'user_list' %}"><div class="user_list">Список пользователей</div></a>
+    {% endif %}
+    {% endif %}
+{% block content %}
+
+{% endblock %}
+
+
+    <div class="footer">
+            <ul>
+                <li>
+                     +7-8352-20-12-09, telegram
+                </li>
+                <li>
+                     Мой Силант 2023
+                </li>
+            </ul>
+    </div>
+</body>
+    
+</html>

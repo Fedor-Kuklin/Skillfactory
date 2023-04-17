@@ -1,0 +1,46 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+<div class="name_table"> {{user.first_name}} </div>
+
+<p class="info_p"> Справочники </p>
+
+    <div>
+           <table class="table_car">
+
+               <tr class="table_heading">
+                   <td>Название справочника</td>
+
+               </tr>
+
+               <tr class="table_list">
+                   <td><a  href="{% url 'model_technics'  %}">{{ refs.0 }}</a></td>
+               </tr>
+               <tr class="table_list">
+                   <td><a  href="{% url 'model_motor'  %}">{{ refs.1 }}</a></td>
+               </tr>
+               <tr class="table_list">
+                   <td><a  href="{% url 'model_transmissions'  %}">{{ refs.2 }}</a></td>
+               </tr>
+               <tr class="table_list">
+                   <td><a  href="{% url 'model_driving_bridge'  %}">{{ refs.3 }}</a></td>
+               </tr>
+               <tr class="table_list">
+                   <td><a  href="{% url 'model_controlled_bridge'  %}">{{ refs.4 }}</a></td>
+               </tr>
+               <tr class="table_list">
+                   <td><a  href="{% url 'type_maintenance'  %}">{{ refs.5 }}</a></td>
+               </tr>
+               <tr class="table_list">
+                   <td><a  href="{% url 'recovery_method'  %}">{{ refs.6 }}</a></td>
+               </tr>
+               <tr class="table_list">
+                   <td><a  href="{% url 'type_fault'  %}">{{ refs.7 }}</a></td>
+               </tr>
+
+
+           </table>
+
+</div>
+
+{% endblock %}

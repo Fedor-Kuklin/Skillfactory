@@ -1,0 +1,16 @@
+.table_v_car {
+	margin-left: 40px;
+	margin-top: 20px;
+}
+
+.table_v_car .table_v_heading td {
+	font-family: 'Astra_bold';
+	font-weight: bold;
+	font-size: 12px;
+	padding: 3px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+	max-width: 250px;
+}
+
+

@@ -1,0 +1,12 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+
+<div class="name_table"> Вы действительно хотите удалить машину с заводским номером</div>
+<div> {{ car_one.factory_num_car }}  </div>
+<form method="POST">
+    {% csrf_token %}
+    <input class="post_delete" type="submit" value="подтвердить">
+
+    <a class="url_add_car" href="{% url 'search_car' %}"><span>отменить</span></a></form>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+<div class="name_table"> Проверьте комплектацию и технические характеристики техники Силант</div>
+<div class="search_style_">
+        <div class="search_car_all">
+            <form method="GET">
+
+                {{ filter.form }}
+                <input class="input_search" type="submit" formaction="{% url 'car_all' %}" value="Найти" >
+            </form>
+        </div>
+</div>
+
+{% endblock content %}

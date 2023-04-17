@@ -1,0 +1,55 @@
+{% extends 'polls/base.html' %}
+{% block content %}
+<div class="name_table"> {{user.first_name}} </div>
+
+<p class="info_p"> Справочник {{ name }} </p>
+
+    <div>
+           <table class="table_car sortable" id="table_id">
+
+               <tr class="table_heading">
+                   <td>Название</td>
+                   <td>Описание</td>
+               </tr>
+
+               {% for model in object_list %}
+               <tr class="table_list">
+                   <td><a  href="{{ model.get_absolute_url }}">{{ model.title }}</a></td>
+                   <td><a  href="{{ model.get_absolute_url }}">{{ model.description }}</a> </td>
+               </tr>
+               {% endfor %}
+
+           </table>
+        {% if perms.polls.add_modeldrivingbridge %}
+            <div class="div_add_car">
+                <a class="url_add_car" href="{% url 'model_driving_bridge_create' %}">
+                    <span>Добавить {{ name }}</span>
+                </a>
+            </div>
+        {% endif %}
+</div>
+<div class="padding_style">
+{% if is_paginated %}
+    <!-- Если доступна предыдущая страница, то даём ссылку на неё и самую первую страницу -->
+    {% if page_obj.has_previous %}
+        <a href="?page=1">First</a>
+        <a href="?page={{ page_obj.previous_page_number }}"><<</a>
+    {% endif %}
+
+    <!-- Показываем только текущую страницу и ближайшие к ней, чтобы список не тянулся и не захламлял страницу -->
+    {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            <a>{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+
+    <!-- Если есть следующая страница, то даём ссылку на неё и на самую последнюю страницу -->
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">>></a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+    {% endif %}
+{% endif %}
+</div>
+{% endblock content %}

@@ -1,0 +1,468 @@
+/* Обычный */
+@font-face {
+	font-family: 'Astra';
+	font-style: normal;
+	font-weight: normal;
+	src: url(fonts/PT_Astra_Sans/PT-Astra-Sans_Regular.ttf);
+}
+
+/* Жирный */
+@font-face {
+	font-family: 'Astra_bold';
+	src: url(fonts/PT_Astra_Sans/PT-Astra-Sans_Bold.ttf);
+}
+
+html, body {
+	font-family: 'Astra';
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	color: #444;
+	background: #EBE6D6;
+	min-height: 800px;
+}
+
+.header {
+	background: #163E6C;
+	top: 0;
+	left: 0;
+	height: 100px;
+	width: 100%;
+}
+
+.header p {
+	width: 100%;
+	display: flex;
+	margin: 0;
+	font-size: large;
+	justify-content: center;
+	color: #010101;
+}
+
+.footer {
+	background-color: #163E6C;
+	/*position: absolute;*/
+	left: 0;
+	bottom: 0;
+	height: 40px;
+	color: #fca430;
+	width: 100%;
+}
+
+.footer ul{
+	height: 40px;
+	display: flex;
+    list-style: none;
+    margin: 0;
+    justify-content: space-evenly;
+	align-items: center;
+	padding-right: 20px;
+}
+
+
+
+.name_table{
+	margin: 0 auto;
+	padding: 5px 0 5px 0;
+	width: max-content;
+}
+
+.reference{
+	display: block;
+	position: absolute;
+	margin: 5px 0 0 10px;
+	height: 25px;
+	width: 110px;
+	text-align: center;
+	border: 1px solid #fca430;
+	border-radius: 7px;
+	color: black;
+}
+
+.reference:hover{
+	background: #f5f5bd;
+}
+
+.user_list{
+	display: block;
+	position: absolute;
+	margin: 5px 0 0 130px;
+	height: 25px;
+	width: 170px;
+	text-align: center;
+	border: 1px solid #fca430;
+	border-radius: 7px;
+	color: black;
+}
+
+.user_list:hover{
+	background: #f5f5bd;
+}
+
+.table_car, div h4 {
+	text-align: center;
+  	background-color: #EBE6D6;
+  	padding: 0.5rem 0.5rem;
+  	color: #000;
+	border-spacing: 0.1em;
+	margin: auto;
+	font-weight: normal;
+}
+.table_car .table_heading td {
+	font-family: 'Astra_bold';
+	font-weight: bold;
+	font-size: 12px;
+	padding: 1px;
+	background: #D20A11;
+	border: 1px solid #163E6C;
+}
+
+.table_car .table_list td {
+	font-family: 'Astra';
+	font-weight: normal;
+	font-size: 11px;
+	border: 1px solid #163E6C;
+	padding: 5px;
+	/*position: relative;*/
+}
+
+.table_car tr:hover {
+	background: #b9b9b0;
+	/*position: relative;*/
+}
+
+.table_car .table_list td a {
+	display: block;
+	text-decoration: none;
+	color: black;
+}
+
+.logo {
+
+	background: url('../images/Logo.png') no-repeat 5px 5px;
+	height: 60px;
+	width: 100px;
+}
+
+.header ul {
+padding-inline-start: 20px;
+}
+
+ul.mainmenu {
+	/*position: absolute;*/
+	list-style: none;
+	margin-top: 0;
+	margin-bottom: 10px;
+	padding: 0;
+	height: 60px;
+	width: 100%;
+	color: #fca430;
+	font-size: 20px;
+	display: inline-flex;
+	justify-content: space-between;
+    align-items: center;
+}
+
+
+ul.mainmenu li.last a {
+	padding-right: 20px;
+	color: #000000
+}
+
+.detail {
+	display: inline-flex;
+	margin-top: 15px;
+	margin-left: 30px;
+	height: 40px;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 70px;
+    vertical-align: top;
+	margin: 0 auto;
+}
+.loginform{
+	width: max-content;
+	margin: 0 auto;
+
+}
+
+.form_search{
+	padding: 0;
+    vertical-align: top;
+	margin: 0 auto;
+}
+
+
+
+.form_search .li_search_car{
+	list-style: none;
+	max-width: 150px;
+	font-size: 10px;
+	padding: 0;
+}
+
+
+.form_search .li_search_car li select{
+	min-width: 110px;
+}
+
+.form_search .li_search_maintenance_1{
+	list-style: none;
+	max-width: 140px;
+	font-size: 10px;
+	padding: 0;
+}
+
+
+.form_search .li_search_maintenance_2 li select{
+	min-width: 110px;
+}
+
+.form_search .li_search_maintenance_2{
+	list-style: none;
+	max-width: 110px;
+	font-size: 10px;
+	padding: 0;
+}
+
+.form_search .li_search_maintenance_3{
+	list-style: none;
+	max-width: 220px;
+	font-size: 10px;
+	padding: 0;
+}
+
+
+.form_search .li_search_maintenance_3 li select{
+	min-width: 110px;
+}
+
+.form_search .li_search_claim_1{
+	list-style: none;
+	max-width: 180px;
+	font-size: 10px;
+	padding: 0;
+}
+
+
+.form_search .li_search_claim_1 li select{
+	min-width: 110px;
+}
+
+.form_search .li_search_claim_2{
+	list-style: none;
+	max-width: 110px;
+	font-size: 10px;
+	padding: 0;
+}
+
+
+.form_search .li_search_claim_2 li select{
+	min-width: 110px;
+}
+
+.form_search .li_search_claim_3{
+	list-style: none;
+	max-width: 220px;
+	font-size: 10px;
+	padding: 0;
+}
+
+.form_search .li_search_claim_3 li select{
+	min-width: 110px;
+}
+
+.form-error ul{
+    list-style: none;
+    padding: 0;
+    color: #CC0000;
+	width: max-content;
+	margin: 0 auto;
+}
+
+.login_submit, .login_submit button {
+	margin: 0 auto;
+	height: 25px;
+	width: 70px;
+	border: 1px solid #fca430;
+	border-radius: 3px;
+}
+
+.tab_list{
+	list-style: none;
+	text-align: center;
+	margin: 15px auto;
+	width: 650px;
+}
+
+ul.tab_list li{
+	display: inline;
+}
+
+ul.tab_list li a:-webkit-any-link{
+	color: black;
+	text-decoration: none;
+	padding: 5px 10px;
+}
+
+ul.tab_list li a{
+	border: 1px solid #fca430;
+	border-radius: 5px;
+}
+
+.car_all{
+	background-color: #D20A11;
+}
+
+ul.tab_list li a:hover{
+	background: #f5f5bd;
+}
+.search_car ul{
+display: inline-flex;
+    text-align: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.search_style{
+	width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.search_style_{
+	width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+
+.info_p{
+	text-align: center;
+	margin: 15px auto;
+	width: 350px
+}
+
+.input_create{
+	display: block;
+	height: 30px;
+	width: max-content;
+	border: 1px solid #fca430;
+	border-radius: 3px;
+	margin: 0 auto;
+}
+
+.input_search {
+	height: 30px;
+	width: max-content;
+	border: 1px solid #fca430;
+	border-radius: 3px;
+}
+
+div.create-update, .title_create_update, .padding_style {
+	display: block;
+	width: max-content;
+	margin: 0 auto;
+}
+
+.padding_style a{
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.title_create_update{
+	padding: 12px 0 12px;
+}
+
+div.create-update{
+	list-style: none;
+}
+
+div.create-update li label{
+	min-width: 170px;
+	display: inline-table;
+	padding: 10px 0 10px;
+}
+div.create-update li input{
+	padding: 2px 0 2px;
+}
+
+a.url_add_car{
+	border: 1px solid #fca430;
+	border-radius: 3px;
+	text-decoration: none;
+	color:black;
+	padding: 5px 6px 5px 6px;
+	margin-left: 5px;
+	background: #efefef;
+}
+
+div.create-update div{
+	margin-bottom: 10px;
+}
+
+div.create-update form ul{
+	list-style: none;
+	display: inline-flex;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+div.pass_change {
+	list-style: none;
+	width: 100%;
+	display: inline-flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+
+div.pass_change form ul{
+	list-style: none;
+	display: inline-flex;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+	max-width: 200px;
+}
+
+
+.div_add_car {
+	display: flex;
+	justify-content: center;
+
+}
+
+.input_search:hover, .login_submit button:hover, a.url_add_car:hover, .input_create:hover{
+	background: #f5f5bd;
+}
+
+@media screen and (max-width: 600px) {
+  .table_car {
+    overflow-y: scroll;
+  }
+	.table_car .table_heading td {
+		font-size: 10px;
+	}
+	.table_car .table_list td {
+		font-size: 9px;
+	}
+}
+

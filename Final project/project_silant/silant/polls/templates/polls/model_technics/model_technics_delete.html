@@ -1,0 +1,15 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+
+<div class="create-update"> Вы действительно хотите удалить {{ name }} {{object.title}}
+<form method="POST">
+    {% csrf_token %}
+    <ul>
+
+        <li> <input class="input_create" type="submit" value="подтвердить"></li>
+        <li> <a class="url_add_car" href="{% url 'model_technics' %}"><span>отменить</span></a></li>
+    </ul>
+</form>
+</div>
+{% endblock content %}

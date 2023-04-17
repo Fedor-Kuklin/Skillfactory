@@ -1,0 +1,86 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+<div class="name_table"> Проверьте комплектацию и технические характеристики техники Силант</div>
+<div class="search_style_">
+        <div class="search_car">
+            <form method="GET">
+
+                {{ filter.form }}
+                <input class="input_search" type="submit"  value="Найти" >
+            </form>
+        </div>
+</div>
+<p class="info_p"> Информация о комплектации и технических характеристиках Вашей техники </p>
+
+    <div>
+{% if cars %}
+
+        <h4>таблица с данными (выдача результата)</h4>
+        {% if request.user.is_authenticated %}
+                <ul class="tab_list">
+                    <li ><a class="car_all" href="{% url 'search_car' %}">Общая информация</a> </li>
+                    <li><a  href="{% url 'maintenance' %}">Техническое обслуживание</a></li>
+                    <li><a href="{% url 'claim' %}">Рекламации</a></li>
+                </ul>
+        {% endif %}
+                    <table class="table_car sortable" id="table_id">
+
+                       <tr class="table_heading">
+                           <td>Зав. № машины</td>
+                           <td>Модель техники</td>
+                           <td>Модель двигателя</td>
+                           <td>Зав. № двигателя</td>
+                           <td>Модель трансмиссии</td>
+                           <td>Зав. № трансмиссии</td>
+                           <td>Модель ведущего моста</td>
+                           <td>Зав. № ведущего моста</td>
+                           <td>Модель управляемого моста</td>
+                           <td>Зав. № управляемого моста</td>
+                       </tr>
+
+                        {% for car in object_list %}
+                       <tr class="table_list">
+                           <td>{{ car.factory_num_car }}</td>
+                           <td>{{ car.model_technics }} </td>
+                           <td>{{ car.model_motor }}</td>
+                           <td>{{ car.factory_num_motor }}</td>
+                           <td>{{ car.model_transmissions }}</td>
+                           <td>{{ car.factory_num_transmissions }}</td>
+                           <td>{{ car.model_driving_bridge }}</td>
+                           <td>{{ car.factory_num_driving_bridge }}</td>
+                           <td>{{ car.model_controlled_bridge }}</td>
+                           <td>{{ car.factory_num_controlled_bridge }}</td>
+                       </tr>
+                       {% endfor %}
+
+                   </table>
+{% else %}
+       <h2>Машин нет!</h2>
+   {% endif %}
+</div>
+<div class="padding_style">
+{% if is_paginated %}
+    <!-- Если доступна предыдущая страница, то даём ссылку на неё и самую первую страницу -->
+    {% if page_obj.has_previous %}
+        <a href="?page=1">First</a>
+        <a href="?page={{ page_obj.previous_page_number }}"><<</a>
+    {% endif %}
+
+    <!-- Показываем только текущую страницу и ближайшие к ней, чтобы список не тянулся и не захламлял страницу -->
+    {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            <a>{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+
+    <!-- Если есть следующая страница, то даём ссылку на неё и на самую последнюю страницу -->
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">>></a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+    {% endif %}
+{% endif %}
+</div>
+{% endblock content %}

@@ -1,0 +1,70 @@
+{% extends 'polls/base.html' %}
+{% load static %}
+{% block add_style %}<link type="text/css" href="{% static 'polls/css/styles_detail.css' %}" rel="stylesheet" /> {% endblock %}
+{% block content %}
+
+<div class="name_table"> Проверьте комплектацию и технические характеристики техники Силант</div>
+
+<p class="info_p"> Информация о комплектации и технических характеристиках Вашей техники </p>
+
+    <div>
+        {% if request.user.is_authenticated %}
+             <h4>таблица с данными (выдача результата)</h4>
+                <ul class="tab_list">
+                    <li ><a  href="{% url 'search_car' %}">Общая информация</a> </li>
+                    <li><a class="car_all" href="{% url 'maintenance' %}">Техническое обслуживание</a></li>
+                    <li><a href="{% url 'claim' %}">Рекламации</a></li>
+                </ul>
+                  <table class="table_v_car">
+
+                           <tr class="table_v_heading">
+                                <td>Зав. № машины</td>
+                                <td>{{ maintenance_one.car.factory_num_car }}</td>
+
+                           </tr>
+                           <tr class="table_v_heading">
+                                <td>Вид ТО</td>
+                                <td>{{ maintenance_one.type_maintenance }} </td>
+                                <td>{{ maintenance_one.type_maintenance.description }} </td>
+                           </tr>
+                            <tr class="table_v_heading">
+                                <td>Дата проведения ТО</td>
+                                <td>{{ maintenance_one.data_maintenance }}</td>
+
+                            </tr>
+                            <tr class="table_v_heading">
+                                <td>Наработка,м/час</td>
+                                <td>{{ maintenance_one.operating_time }}</td>
+
+                            </tr>
+                            <tr class="table_v_heading">
+                                <td>№ заказ-наряда</td>
+                                <td>{{ maintenance_one.num_order }}</td>
+
+                            </tr>
+                            <tr class="table_v_heading">
+                                <td>Дата заказ-наряда</td>
+                                <td>{{ maintenance_one.data_order }}</td>
+
+                            </tr>
+                            <tr class="table_v_heading">
+                                <td>Организация, проводившая ТО</td>
+                                <td>{{ maintenance_one.service_company }}</td>
+                                <td>{{ maintenance_one.service_company.description }}</td>
+                            </tr>
+
+                   </table>
+
+
+
+{% endif %}
+</div>
+<div class="detail">
+{% if perms.polls.change_maintenance %}
+<div><a class="url_add_car" href="{% url 'maintenance_update' maintenance_one.id %}">Изменить данные о ТО</a></div>
+{% endif %}
+{% if perms.polls.delete_maintenance %}
+<div><a class="url_add_car" href="{% url 'maintenance_delete' maintenance_one.id %}">Удалить ТО</a></div>
+</div>
+{% endif %}
+{% endblock content %}

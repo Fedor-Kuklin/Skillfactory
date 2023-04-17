@@ -1,0 +1,125 @@
+{% extends 'polls/base.html' %}
+{% load static %}
+{% block add_style %}<link type="text/css" href="{% static 'polls/css/styles_detail.css' %}" rel="stylesheet" /> {% endblock %}
+
+{% block content %}
+
+<div class="name_table"> Проверьте комплектацию и технические характеристики техники Силант</div>
+
+<p class="info_p"> Информация о комплектации и технических характеристиках Вашей техники </p>
+
+    <div>
+        {% if request.user.is_authenticated %}
+             <h4>таблица с данными (выдача результата)</h4>
+                <ul class="tab_list">
+                    <li ><a class="car_all" href="{% url 'search_car' %}">Общая информация</a> </li>
+                    <li><a  href="{% url 'maintenance' %}">Техническое обслуживание</a></li>
+                    <li><a href="{% url 'claim' %}">Рекламации</a></li>
+                </ul>
+                   <table class="table_v_car">
+
+                       <tr class="table_v_heading">
+                           <td>Зав. № машины</td>
+                           <td>{{ car_detail.factory_num_car }}</td>
+                       </tr>
+
+                       <tr class="table_v_heading">
+                           <td>Модель техники</td>
+                           <td>{{ car_detail.model_technics }} </td>
+                           <td>{{ car_detail.model_technics.description }} </td>
+                       </tr>
+
+                       <tr class="table_v_heading">
+                           <td>Модель двигателя</td>
+                           <td>{{ car_detail.model_motor }}</td>
+                           <td>{{ car_detail.model_motor.description }}</td>
+                       </tr>
+
+                       <tr class="table_v_heading">
+                           <td>Зав. № двигателя</td>
+                           <td>{{ car_detail.factory_num_motor }}</td>
+
+                       </tr>
+                       <tr class="table_v_heading">
+                           <td>Модель трансмиссии</td>
+                           <td>{{ car_detail.model_transmissions }}</td>
+                           <td>{{ car_detail.model_transmissions.description }}</td>
+                       </tr>
+
+                       <tr class="table_v_heading">
+                           <td>Зав. № трансмиссии</td>
+                           <td>{{ car_detail.factory_num_transmissions }}</td>
+                       </tr>
+
+                       <tr class="table_v_heading">
+                           <td>Модель ведущего моста</td>
+                           <td>{{ car_detail.model_driving_bridge }}</td>
+                           <td>{{ car_detail.model_driving_bridge.description }}</td>
+                       </tr>
+
+                       <tr class="table_v_heading">
+                           <td>Зав. № ведущего моста</td>
+                           <td>{{ car_detail.factory_num_driving_bridge }}</td>
+                       </tr>
+
+                       <tr class="table_v_heading">
+                           <td>Модель управляемого моста</td>
+                           <td>{{ car_detail.model_controlled_bridge }}</td>
+                           <td>{{ car_detail.model_controlled_bridge.description }}</td>
+                       </tr>
+
+                       <tr class="table_v_heading">
+                           <td>Зав. № управляемого моста</td>
+                           <td>{{ car_detail.factory_num_controlled_bridge }}</td>
+                       </tr>
+
+                       <tr class="table_v_heading">
+                           <td>Договор поставки №, дата</td>
+                           <td>{{ car_detail.contract_num_data }}</td>
+                       </tr>
+
+                       <tr class="table_v_heading">
+                           <td>Дата отгрузки с завода</td>
+                           <td>{{ car_detail.ship_date }}</td>
+                       </tr>
+
+                       <tr class="table_v_heading">
+                           <td>Грузополучатель (конечный потребитель)</td>
+                           <td>{{ car_detail.consignee }}</td>
+                       </tr>
+
+                       <tr class="table_v_heading">
+                           <td>Адрес поставки (эксплуатации)</td>
+                           <td>{{ car_detail.delivery_address }}</td>
+                       </tr>
+
+                       <tr class="table_v_heading">
+                           <td>Комплектация (доп. опции)</td>
+                           <td>{{ car_detail.equipment }}</td>
+                       </tr>
+
+                       <tr class="table_v_heading">
+                           <td>Клиент</td>
+                           <td>{{ car_detail.client.name }}</td>
+                           <td>{{ car_detail.client.description }}</td>
+                       </tr>
+
+                       <tr class="table_v_heading">
+                           <td>Сервисная компания</td>
+                           <td>{{ car_detail.service_company }}</td>
+                           <td>{{ car_detail.service_company.description }}</td>
+                       </tr>
+
+                   </table>
+
+{% endif %}
+</div>
+<div class="detail">
+{% if perms.polls.change_car %}
+<div><a class="url_add_car" href="{% url 'car_update' car_detail.id %}">Изменить данные о машине</a></div>
+{% endif %}
+{% if perms.polls.delete_car %}
+<div><a class="url_add_car" href="{% url 'car_delete' car_detail.id %}">Удалить машину </a></div>
+{% endif %}
+</div>
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+<h3 class="title_create_update">Добавить машину</h3>
+<div class="create-update">
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_ul }}
+
+    <input class="input_create" type="submit" value="Добавить машину">
+</form>
+</div>
+{% endblock content %}

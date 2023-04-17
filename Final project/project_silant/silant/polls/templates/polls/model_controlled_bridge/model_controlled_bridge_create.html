@@ -1,0 +1,25 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+<h3 class="title_create_update">Добавить {{ name }}</h3>
+
+<div class="create-update">
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_ul }}
+
+    <ul>
+       <li> <input class="input_create" type="submit" value="Применить изменения"></li>
+       <li> <a class="url_add_car" href="{% url 'model_driving_bridge' %}"><span>отменить</span></a></li>
+        {% if perms.polls.delete_modeldrivingbridge %}
+    {% if update %}
+        <li><a class="url_add_car" href="{% url 'model_driving_bridge_delete' object.id %}">Удалить {{ name }}</a></li>
+        {% endif %}
+    {% endif %}
+    </ul>
+
+
+
+</form>
+</div>
+{% endblock content %}

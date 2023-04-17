@@ -1,0 +1,78 @@
+{% extends 'polls/base.html' %}
+{% load static %}
+{% block add_style %}<link type="text/css" href="{% static 'polls/css/styles_detail.css' %}" rel="stylesheet" /> {% endblock %}
+{% block content %}
+
+<div class="name_table"> Проверьте комплектацию и технические характеристики техники Силант</div>
+
+<p class="info_p"> Информация о комплектации и технических характеристиках Вашей техники </p>
+
+    <div>
+        {% if request.user.is_authenticated %}
+             <h4>таблица с данными (выдача результата)</h4>
+                <ul class="tab_list">
+                    <li ><a  href="{% url 'search_car' %}">Общая информация</a> </li>
+                    <li><a  href="{% url 'maintenance' %}">Техническое обслуживание</a></li>
+                    <li><a class="car_all" href="{% url 'claim' %}">Рекламации</a></li>
+                </ul>
+                  <table class="table_v_car">
+
+                       <tr class="table_v_heading">
+                           <td>Зав. № машины</td>
+                           <td>{{ claim_one.car.factory_num_car }}</td>
+                       </tr>
+                       <tr class="table_v_heading">
+                           <td>Дата отказа</td>
+                           <td>{{ claim_one.data_rejection }} </td>
+                       </tr>
+                       <tr class="table_v_heading">
+                           <td>Наработка,м/час</td>
+                           <td>{{ claim_one.operating_time }}</td>
+                       </tr>
+                       <tr class="table_v_heading">
+                           <td>Узел отказа</td>
+                           <td>{{ claim_one.node_failure.title }}</td>
+                           <td class="description">{{ claim_one.node_failure.description }}</td>
+                       </tr>
+                       <tr class="table_v_heading">
+                           <td>Описание отказа</td>
+                           <td>{{ claim_one.description_failure }}</td>
+                       </tr>
+                       <tr class="table_v_heading">
+                           <td>Способ восстановления</td>
+                           <td>{{ claim_one.recovery_method.title }}</td>
+                           <td class="description">{{ claim_one.recovery_method.description }}</td>
+                       </tr>
+                       <tr class="table_v_heading">
+                           <td>Используемые запасные части</td>
+                           <td>{{ claim_one.spare_parts }}</td>
+                       </tr>
+                       <tr class="table_v_heading">
+                           <td>Дата восстановления</td>
+                           <td>{{ claim_one.data_restoration }}</td>
+                       </tr>
+                       <tr class="table_v_heading">
+                           <td>Время простоя техники</td>
+                           <td>{{ claim_one.downtime_technic }}</td>
+                       </tr>
+                       <tr class="table_v_heading">
+                           <td>Сервисная компания</td>
+                           <td>{{ claim_one.service_company.name }}</td>
+                           <td>{{ claim_one.service_company.description }}</td>
+                       </tr>
+
+                   </table>
+
+
+
+{% endif %}
+</div>
+<div class="detail">
+{% if perms.polls.change_claim %}
+<div><a class="url_add_car" href="{% url 'claim_update' claim_one.id %}">Изменить данные о рекламации</a></div>
+{% endif %}
+{% if perms.polls.delete_claim %}
+<div><a class="url_add_car" href="{% url 'claim_delete' claim_one.id %}">Удалить рекламацию</a></div>
+{% endif %}
+</div>
+{% endblock content %}

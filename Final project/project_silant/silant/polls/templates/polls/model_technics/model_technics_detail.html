@@ -1,0 +1,37 @@
+{% extends 'polls/base.html' %}
+{% load static %}
+{% block add_style %}<link type="text/css" href="{% static 'polls/css/styles_detail.css' %}" rel="stylesheet" /> {% endblock %}
+{% block content %}
+
+<p class="info_p"> Информация о модели техники </p>
+
+    <div>
+        {% if request.user.is_authenticated %}
+             <h4>таблица с данными (выдача результата)</h4>
+                <ul class="tab_list">
+                    <li ><a  href="{% url 'search_car' %}">Общая информация</a> </li>
+                    <li><a  href="{% url 'maintenance' %}">Техническое обслуживание</a></li>
+                    <li><a class="car_all" href="{% url 'claim' %}">Рекламации</a></li>
+                </ul>
+
+                    {{ form }}
+                  <table class="table_v_car">
+
+                       <tr class="table_v_heading">
+                           <td>Название</td>
+                           <td>{{ object.title }}</td>
+                       </tr>
+                       <tr class="table_v_heading">
+                           <td>Описание</td>
+                           <td>{{ object.description }} </td>
+                       </tr>
+
+                   </table>
+
+
+
+{% endif %}
+</div>
+<div><a href="{% url 'model_technics_update' model_technics_one.id %}">Изменить данные о модели техники</a></div>
+<div><a href="{% url 'model_technics_delete' model_technics_one.id %}">Удалить модель техники</a></div>
+{% endblock content %}

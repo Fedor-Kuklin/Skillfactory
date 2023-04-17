@@ -1,0 +1,109 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+    <div class="name_table"> Пользователь {{user.first_name}}   </div>
+{% endif %}
+<p class="info_p"> Информация о рекламациях Вашей техники </p>
+
+    <div>
+        <div class="search_style">
+        <div class="search_car">
+            <form method="GET">
+                <ul class="form_search">
+
+                <ul class="li_search_claim_1">
+                    <li>{{ filter.form.node_failure.label }}</li>
+                    <li>{{ filter.form.node_failure }}</li>
+
+                </ul>
+                <ul class="li_search_claim_2">
+                    <li>{{ filter.form.recovery_method.label }} </li>
+                    <li>{{ filter.form.recovery_method }} </li>
+                </ul>
+                <ul class="li_search_claim_3">
+                    <li>{{ filter.form.service_company.label }}</li>
+                    <li>{{ filter.form.service_company }}
+                 </ul>
+
+                <input class="input_search" type="submit" value="Найти" >
+                    {% if perms.polls.add_claim %}
+                         <a class="url_add_car" href="{% url 'claim_create' %}"><span>Добавить рекламацию</span></a>
+                    {% endif %}
+
+                </ul>
+            </form>
+        </div>
+        </div>
+
+                <h4>таблица с данными (выдача результата)</h4>
+                <ul class="tab_list">
+                    <li ><a  href="{% url 'search_car' %}">Общая информация</a> </li>
+                    <li><a  href="{% url 'maintenance' %}">Техническое обслуживание</a></li>
+                    <li><a class="car_all" href="{% url 'claim' %}">Рекламации</a></li>
+                </ul>
+        {% if claims %}
+                   <table class="table_car sortable" id="table_id">
+
+                       <tr class="table_heading">
+                           <td>Зав. № машины</td>
+                           <td>Дата отказа</td>
+                           <td>Наработка,м/час</td>
+                           <td>Узел отказа</td>
+                           <td>Описание отказа</td>
+                           <td>Способ восстановления</td>
+                           <td>Используемые запасные части</td>
+                           <td>Дата восстановления</td>
+                           <td>Время простоя техники</td>
+                           <td>Сервисная компания</td>
+                       </tr>
+
+                       {% for claim in claims %}
+                       {% if user.username == claim.car.client.title.username or user.username == claim.service_company.title.username or request.user.groups.all.0.name == 'Manager' %}
+                       <tr class="table_list">
+                           <td><a  href="{% url 'claim_detail' claim.id %}">{{ claim.car.factory_num_car }}</a></td>
+                           <td><a  href="{% url 'claim_detail' claim.id %}">{{ claim.data_rejection }}</a> </td>
+                           <td><a  href="{% url 'claim_detail' claim.id %}">{{ claim.operating_time }}</a></td>
+                           <td><a  href="{% url 'claim_detail' claim.id %}">{{ claim.node_failure }}</a></td>
+                           <td><a  href="{% url 'claim_detail' claim.id %}">{{ claim.description_failure }}</a></td>
+                           <td><a  href="{% url 'claim_detail' claim.id %}">{{ claim.recovery_method }}</a></td>
+                           <td><a  href="{% url 'claim_detail' claim.id %}">{{ claim.spare_parts }}</a></td>
+                           <td><a  href="{% url 'claim_detail' claim.id %}">{{ claim.data_restoration }}</a></td>
+                           <td><a  href="{% url 'claim_detail' claim.id %}">{{ claim.downtime_technic }}</a></td>
+                           <td><a  href="{% url 'claim_detail' claim.id %}">{{ claim.service_company.name }}</a></td>
+                       </tr>
+                       {% endif %}
+                       {% endfor %}
+
+                   </table>
+
+
+   {% else %}
+       <h2>Рекламаций не было</h2>
+   {% endif %}
+</div>
+<div class="padding_style">
+{% if is_paginated %}
+    <!-- Если доступна предыдущая страница, то даём ссылку на неё и самую первую страницу -->
+    {% if page_obj.has_previous %}
+        <a href="?page=1">First</a>
+        <a href="?page={{ page_obj.previous_page_number }}"><<</a>
+    {% endif %}
+
+    <!-- Показываем только текущую страницу и ближайшие к ней, чтобы список не тянулся и не захламлял страницу -->
+    {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            <a>{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+
+    <!-- Если есть следующая страница, то даём ссылку на неё и на самую последнюю страницу -->
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">>></a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+    {% endif %}
+{% endif %}
+</div>
+{% endblock content %}
