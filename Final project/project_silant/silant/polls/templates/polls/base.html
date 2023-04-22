@@ -12,16 +12,19 @@
     {% block add_style %} {% endblock %}
 </head>
 <body>
+
     <div class="header">
 
         <ul id="mainmenu" class="mainmenu">
             {% if request.user.is_authenticated %}
-                        <li class="logo"><a href="{% url 'search_car' %}"><div class="logo"></div> </a></li>
+                        <li class="logo"><a href="{% url 'search_car' %}"><img src="{% static 'polls/images/photo.svg' %}" class="logo"/> </a></li>
+
                     {% else %}
-                        <li class="logo"><a href="{% url 'car_all_blank' %}"><div class="logo"></div></a></li>
+                        <li class="logo"><a href="{% url 'car_all_blank' %}"><img src="{% static 'polls/images/photo.svg' %}" class="logo"/> </a></li>
+
                     {% endif %}
-            <li >
-                +7-8352-20-12-09, telegram
+            <li class="telefon" >
+                <p>+7-8352-20-12-09, telegram</p>
             </li>
             {% if request.user.is_authenticated %}
 				<li class="last"><a href="{% url 'logout' %}">Выйти из сервиса</a></li>
@@ -30,17 +33,22 @@
 				<li class="last"><a href="{% url 'login' %}">Авторизоваться</a></li>
             {% endif %}
         </ul>
-        <p>Электронная сервисная книжка "Мой Силант"</p>
+
     </div>
+    <ul class="ref_us">
     {% if request.user.is_authenticated %}
     {% if perms.polls.view_references %}
-    <a href="{% url 'references' %}"><div class="reference">Справочники</div></a>
+
+    <li><a class="reference" href="{% url 'references' %}"><span>Справочники</span></a></li>
 
     {% endif %}
     {% if perms.auth.view_user %}
-    <a href="{% url 'user_list' %}"><div class="user_list">Список пользователей</div></a>
+    <li><a class="user_list" href="{% url 'user_list' %}"><span>Список пользователей</span></a></li>
     {% endif %}
     {% endif %}
+    </ul>
+    <div class="elec_book"> <p>Электронная сервисная книжка "Мой Силант" </p></div>
+
 {% block content %}
 
 {% endblock %}
@@ -57,5 +65,5 @@
             </ul>
     </div>
 </body>
-    
+
 </html>

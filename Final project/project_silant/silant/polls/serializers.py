@@ -111,3 +111,15 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username', 'first_name']
+
+
+class ClientSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Client
+        fields = ['id', 'title',  'name', 'description']
+
+
+class ServiceCompanySerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = ServiceCompany
+        fields = ['id', 'name', 'description']

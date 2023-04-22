@@ -2,11 +2,14 @@
 
 {% block content %}
 
-<div class="name_table"> Вы действительно хотите удалить машину с заводским номером</div>
-<div> {{ car_one.factory_num_car }}  </div>
+<div class="name_table"> Вы действительно хотите удалить машину с заводским номером {{ car_one.factory_num_car }}</div>
+
 <form method="POST">
     {% csrf_token %}
+    <div class="delete_all">
     <input class="post_delete" type="submit" value="подтвердить">
 
-    <a class="url_add_car" href="{% url 'search_car' %}"><span>отменить</span></a></form>
+    <a class="post_no" href="{% url 'search_car' %}"><span>отменить</span></a>
+    </div>
+</form>
 {% endblock content %}

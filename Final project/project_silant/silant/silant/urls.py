@@ -31,6 +31,8 @@ router.register(r'type_maintenance', TypeMaintenanceViewset)
 router.register(r'type_fault', TypeFaultViewset)
 router.register(r'recovery_method', RecoveryMethodViewset)
 router.register(r'user', UserViewset)
+router.register(r'client', ClientViewset)
+router.register(r'service_company', ServiceCompanyViewset)
 
 
 urlpatterns = [

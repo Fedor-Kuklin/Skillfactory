@@ -1,5 +1,5 @@
 {% extends 'polls/base.html' %}
-
+{%load static%}
 {% block content %}
 {% if request.user.is_authenticated %}
     <div class="name_table"> Пользователь {{user.first_name}} </div>
@@ -13,32 +13,33 @@
                 <ul class="form_search">
 
                 <ul class="li_search_maintenance_1">
-                    <li>{{ filter.form.type_maintenance.label }}</li>
+                    <li>{{ filter.form.type_maintenance.label }}<img class="icons_filter" src="{% static 'polls/images/type_to.png' %}" /></li>
                     <li>{{ filter.form.type_maintenance }}</li>
 
                 </ul>
                 <ul class="li_search_maintenance_2">
-                    <li>{{ filter.form.car.label }} </li>
+                    <li>{{ filter.form.car.label }}<img class="icons_filter" src="{% static 'polls/images/nomer.png' %}" /></li>
                     <li>{{ filter.form.car }} </li>
                 </ul>
                 <ul class="li_search_maintenance_3">
-                    <li>{{ filter.form.service_company.label }}</li>
+                    <li>{{ filter.form.service_company.label }}<img class="icons_filter" src="{% static 'polls/images/service.png' %}" /></li>
                     <li>{{ filter.form.service_company }}
                  </ul>
-
-                <input class="input_search" type="submit" value="Найти" >
+                    <li>
+                    <input class="input_search" type="submit" value="Найти" >
                     {% if perms.polls.add_maintenance %}
-                        <a class="url_add_car" href="{% url 'maintenance_create' %}"><span>Добавить ТО</span></a>
+                        <a class="url_add_car" href="{% url 'maintenance_create' %}"><span>Добавить ТО <img class="icons_" src="{% static 'polls/images/add_maintenance.png' %}" /></span></a>
                     {% endif %}
+                    </li>
                 </ul>
             </form>
         </div>
         </div>
         <h4>таблица с данными (выдача результата)</h4>
         <ul class="tab_list">
-            <li ><a  href="{% url 'search_car' %}">Общая информация</a> </li>
-            <li><a class="car_all" href="{% url 'maintenance' %}">Техническое обслуживание</a></li>
-            <li><a href="{% url 'claim' %}">Рекламации</a></li>
+            <li ><a  href="{% url 'search_car' %}">Общая информация <img class="icons_" src="{% static 'polls/images/add_car.png' %}" /></a> </li>
+            <li><a class="car_all" href="{% url 'maintenance' %}">Техническое обслуживание <img class="icons_" src="{% static 'polls/images/add_maintenance.png' %}" /></a></li>
+            <li><a href="{% url 'claim' %}">Рекламации <img class="icons_" src="{% static 'polls/images/add_claim.png' %}" /></a></li>
         </ul>
             {% if maintenance %}
                    <table class="table_car sortable" id="table_id">
@@ -54,7 +55,7 @@
                        </tr>
 
                        {% for mainten in maintenance %}
-                       {% if user.username == mainten.car.client.title.username or user.username == mainten.service_company.title.username or request.user.groups.all.0.name == 'Manager' %}
+                       {% if user.username == mainten.car.client.title.username or user.username == mainten.service_company.title.username or request.user.groups.all.0.name == 'Manager' or request.user.groups.all.0.name == 'administ' or user.is_superuser %}
                        <tr class="table_list">
                            <td><a  href="{% url 'maintenance_detail' mainten.id %}">{{ mainten.car.factory_num_car }}</a></td>
                            <td><a  href="{% url 'maintenance_detail' mainten.id %}">{{ mainten.type_maintenance }}</a> </td>

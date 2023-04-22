@@ -61,3 +61,13 @@ class RecoveryMethodViewset(ModelViewSet):
 class UserViewset(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+
+class ClientViewset(ModelViewSet):
+    queryset = Client.objects.all()
+    serializer_class = ClientSerializer
+
+
+class ServiceCompanyViewset(ModelViewSet):
+    queryset = ServiceCompany.objects.all()
+    serializer_class = ServiceCompanySerializer

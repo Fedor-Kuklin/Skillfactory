@@ -5,5 +5,9 @@
 <div class="name_table"> Вы действительно хотите удалить рекламацию</div>
 <form method="POST">
     {% csrf_token %}
-    <input type="submit" value="подтвердить"><a class="url_add_car" href="{% url 'claim' %}"><span>отменить</span></a></form>
+     <div class="delete_all">
+    <input class="post_delete" type="submit" value="подтвердить">
+    <a class="post_no" href="{% url 'claim' %}"><span>отменить</span></a>
+     </div>
+</form>
 {% endblock content %}
